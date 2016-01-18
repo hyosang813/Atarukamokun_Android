@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#FFFF00"
+    tools:context="raksam.com.atarukamokun.MainActivity">
+
+    <!-- 土台のresultView-->
+    <TextView
+        android:id="@+id/resultView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rounded_corners_5dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true" />
+
+    <!-- 結果表示ラベル(7個)-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="true">
+
+        <TextView android:id="@+id/resultLabel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/resultLabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/resultLabel3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/resultLabel4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/resultLabel5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/resultLabel6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/resultLabel7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <!-- 「あたるかもクン」の題名Linerレイアウト-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_above="@id/resultView">
+
+
+        <!-- 「あ」　-->
+        <TextView
+            android:id="@+id/viewA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/colorAccent"
+            android:text="あ"/>
+
+        <!-- 「た」　-->
+        <TextView
+            android:id="@+id/viewTA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:text="た"/>
+
+        <!-- 「る」　-->
+        <TextView
+            android:id="@+id/viewRU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/colorPrimaryDark"
+            android:text="る"/>
+
+        <!-- 「かも」　-->
+        <TextView
+            android:id="@+id/viewKAMO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/colorAccent"
+            android:text="かも"/>
+
+        <!-- 「クン」　-->
+        <TextView
+            android:id="@+id/viewKUN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:text="クン"/>
+    </LinearLayout>
+
+    <!-- 「黒点」Linerレイアウト-->
+    <LinearLayout
+        android:id="@+id/blackPointLinerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/resultView">
+
+        <!-- BP1　-->
+        <TextView
+            android:id="@+id/BP1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="・"/>
+
+        <!-- BP2　-->
+        <TextView
+            android:id="@+id/BP2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="・"/>
+
+        <!-- BP3　-->
+        <TextView
+            android:id="@+id/BP3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="・"/>
+
+        <!-- BP4　-->
+        <TextView
+            android:id="@+id/BP4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="・"/>
+
+        <!-- BP5　-->
+        <TextView
+            android:id="@+id/BP5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="・"/>
+
+    </LinearLayout>
+
+    <!-- 「ボタン」Linerレイアウト-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/blackPointLinerLayout">
+
+        <!-- NUM3-->
+        <ImageButton
+            android:id="@+id/num3Button"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:src="@drawable/numbers3"/>
+
+        <!-- NUM4-->
+        <ImageButton
+            android:id="@+id/num4Button"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:src="@drawable/numbers4"/>
+
+        <!-- MINILOTO-->
+        <ImageButton
+            android:id="@+id/miniLotoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:src="@drawable/miniloto"/>
+
+        <!-- LOTO6-->
+        <ImageButton
+            android:id="@+id/loto6Button"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:src="@drawable/loto6"/>
+
+        <!-- LOTO7-->
+        <ImageButton
+            android:id="@+id/loto7Button"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:src="@drawable/loto7"/>
+
+    </LinearLayout>
+
+
+
+    <!--<ImageButton-->
+        <!--android:id=”@+id/imageButton1″-->
+    <!--android:layout_width=”wrap_content”-->
+    <!--android:layout_height=”wrap_content”-->
+    <!--android:layout_alignParentTop=”true”-->
+    <!--android:layout_centerHorizontal=”true”-->
+    <!--android:layout_marginTop=”86dp”-->
+    <!--android:background=”#00000000″-->
+    <!--android:src=”@drawable/button” />-->
+
+</RelativeLayout>
