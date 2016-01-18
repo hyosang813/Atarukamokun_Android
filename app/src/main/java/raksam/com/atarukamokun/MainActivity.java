@@ -1,6 +1,5 @@
 package raksam.com.atarukamokun;
 
-import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Handler;
@@ -45,9 +44,9 @@ public class MainActivity extends Activity {
     private Timer sequentialDisplayTm = null; //ロト順次表示用タイマー
     private int revolCount = 0; //高速回転開始後にボタン操作可能にするためのカウント
     private int animationCount = 0; //左右アニメーションカウンター
-    private ArrayList<String> startArray = new ArrayList<String>(); //左右アニメーション乱数配列
-    private ArrayList<String> tempStartArray = new ArrayList<String>(); //左右アニメーションをなめらか表示するための乱数配列
-    private ArrayList<String> endArray = new ArrayList<String>(); //最終表示用の配列
+    private ArrayList<String> startArray = new ArrayList<>(); //左右アニメーション乱数配列
+    private ArrayList<String> tempStartArray = new ArrayList<>(); //左右アニメーションをなめらか表示するための乱数配列
+    private ArrayList<String> endArray = new ArrayList<>(); //最終表示用の配列
     private boolean blinkSwitch = true; //点滅状態を作り出すためのスイッチ
     private int orderCount = 0; //ロト系順次表示アニメーション用のカウンタ変数
 
@@ -150,7 +149,9 @@ public class MainActivity extends Activity {
             gd.setStroke(2, Color.BLACK);
             resultLabel.setBackground(gd);
 
-            //以降で下部中央をあける処理と重なる部分が2ptの線幅になる問題の処理が必要！！！！！！！！！！！
+            /***
+             * 以降で下部中央をあける処理と重なる部分が2ptの線幅になる問題の処理が必要！！！！！！！！！！！
+             */
         }
     }
 
@@ -255,8 +256,8 @@ public class MainActivity extends Activity {
                 break;
             default:
                 //範囲指定変数
-                int range = 0;
-                int kind = 0;
+                int range;
+                int kind;
 
                 //くじ別範囲設定
                 switch (buttonKind) {
@@ -652,7 +653,7 @@ public class MainActivity extends Activity {
             if (direction == 0) {
                 resultLabel.setGravity(Gravity.CENTER);
             } else {
-                resultLabel.setGravity(Gravity.LEFT);
+                resultLabel.setGravity(Gravity.START | Gravity.CENTER); //LEFTとかRIGHTはデュプリケートなんだって　STARTとENDに置き換え
             }
         }
     }
