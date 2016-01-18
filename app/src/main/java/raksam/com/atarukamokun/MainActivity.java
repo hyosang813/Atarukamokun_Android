@@ -1,5 +1,7 @@
 package raksam.com.atarukamokun;
 
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Handler;
 import android.app.Activity;
@@ -130,7 +132,11 @@ public class MainActivity extends Activity {
             resultLabel.setWidth(resultWidth);
             resultLabel.setHeight(resultHeight);
             resultLabel.setTextColor(Color.BLACK);
-            //フォントサイズもここで動的調整する？？？？？？？？？
+            resultLabel.setTypeface(Typeface.createFromAsset(getAssets(), "7barSPBd.otf")); //外部デジタルフォント指定
+            resultLabel.setTextSize(resultWidth / 4); //フォントサイズの調整
+            /***
+             *とりあえずnexsus5のエミュレータだとwidth/4がちょうど良いサイズになるけど他はどうだろうナーーーーーーーー
+             */
         }
     }
 
