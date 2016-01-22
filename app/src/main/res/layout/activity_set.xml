@@ -10,17 +10,25 @@
     tools:context="raksam.com.atarukamokun.SetActivity">
 
     <Button
-        android:id="@+id/returnButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="戻る"/>
-
-    <Button
         android:id="@+id/tempButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/returnButton"
-        android:text="帰る"/>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="Reset"/>
+
+
+    <Button
+        android:id="@+id/returnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:text="戻る"/>
 
 
     <!-- ナンバーズ３用のビッカー-->
@@ -28,8 +36,8 @@
         android:id="@+id/num3Pick"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
-        <!--android:visibility="gone">-->
+        android:gravity="center"
+        android:visibility="gone">
 
         <NumberPicker
             android:id="@+id/num3_1"
@@ -182,13 +190,14 @@
 
     <!--セグメントコントロールっぽいやつ-->
     <RadioGroup
+        android:id="@+id/pickerSegment"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:checkedButton="@+id/num3SegButton"
         android:orientation="horizontal">
+        <!--android:checkedButton="@+id/num3SegButton"-->
 
         <RadioButton
             android:id="@+id/num3SegButton"

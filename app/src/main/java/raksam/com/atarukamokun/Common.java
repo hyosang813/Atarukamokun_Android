@@ -10,11 +10,13 @@ import android.graphics.Point;
 public class Common extends Application {
 
     // グローバルに扱う変数
-    Point windowSize;        //画面サイズ(x,y)
+    Point windowSize; //画面サイズ(x,y)
+    int segChecked;
 
     // 変数を初期化する
     public void init(){
         windowSize = new Point();
+        segChecked = R.id.num3SegButton; //初期値はnum3
     }
 
 }
