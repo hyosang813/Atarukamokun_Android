@@ -15,4 +15,233 @@
         android:layout_height="wrap_content"
         android:text="戻る"/>
 
+    <Button
+        android:id="@+id/tempButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/returnButton"
+        android:text="帰る"/>
+
+
+    <!-- ナンバーズ３用のビッカー-->
+    <LinearLayout
+        android:id="@+id/num3Pick"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <!--android:visibility="gone">-->
+
+        <NumberPicker
+            android:id="@+id/num3_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/num3_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/num3_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- ナンバーズ４用のビッカー-->
+    <LinearLayout
+        android:id="@+id/num4Pick"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <NumberPicker
+            android:id="@+id/num4_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/num4_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/num4_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/num4_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- ミニロト用のビッカー-->
+    <LinearLayout
+        android:id="@+id/minilotoPick"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <NumberPicker
+            android:id="@+id/mini_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/mini_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/mini_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/mini_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- ロト6用のビッカー-->
+    <LinearLayout
+        android:id="@+id/loto6Pick"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <NumberPicker
+            android:id="@+id/loto6_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/loto6_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/loto6_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/loto6_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/loto6_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- ロト7用のビッカー-->
+    <LinearLayout
+        android:id="@+id/loto7Pick"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <NumberPicker
+            android:id="@+id/loto7_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/loto7_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/loto7_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/loto7_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/loto7_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <NumberPicker
+            android:id="@+id/loto7_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+    <!--セグメントコントロールっぽいやつ-->
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:checkedButton="@+id/num3SegButton"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/num3SegButton"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/segmented_left"
+            android:button="@null"
+            android:gravity="center"
+            android:text="ナン3"
+            android:textColor="@drawable/segmented_text_color" />
+
+        <RadioButton
+            android:id="@+id/num4SegButton"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/segmented_center"
+            android:button="@null"
+            android:gravity="center"
+            android:text="ナン4"
+            android:textColor="@drawable/segmented_text_color" />
+
+        <RadioButton
+            android:id="@+id/minilotoSegButton"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/segmented_center"
+            android:button="@null"
+            android:gravity="center"
+            android:text="ミニロト"
+            android:textColor="@drawable/segmented_text_color" />
+
+        <RadioButton
+            android:id="@+id/loto6SegButton"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/segmented_center"
+            android:button="@null"
+            android:gravity="center"
+            android:text="ロト6"
+            android:textColor="@drawable/segmented_text_color" />
+
+        <RadioButton
+            android:id="@+id/loto7SegButton"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/segmented_right"
+            android:button="@null"
+            android:gravity="center"
+            android:text="ロト7"
+            android:textColor="@drawable/segmented_text_color" />
+    </RadioGroup>
+
+
+
+
 </RelativeLayout>
