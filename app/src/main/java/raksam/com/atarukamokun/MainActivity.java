@@ -1,5 +1,6 @@
 package raksam.com.atarukamokun;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Handler;
@@ -87,6 +88,16 @@ public class MainActivity extends Activity {
                 }
             });
         }
+
+        //設定画面ボタン
+        ImageButton setButton = (ImageButton)findViewById(R.id.setButton);
+        setButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SetActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

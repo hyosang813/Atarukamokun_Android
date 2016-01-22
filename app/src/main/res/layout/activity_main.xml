@@ -57,9 +57,9 @@
 
     </LinearLayout>
 
-
     <!-- 「あたるかもクン」の題名Linerレイアウト-->
     <LinearLayout
+        android:id="@+id/titleLinerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -112,6 +112,61 @@
             android:background="@color/colorPrimary"
             android:text="クン"/>
     </LinearLayout>
+
+    <!-- 設定ボタンと結果保存ボタンのLinerレイアウト-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 結果保存-->
+        <ImageButton
+            android:id="@+id/stockButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/stock"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"/>
+
+        <!-- 設定-->
+        <ImageButton
+            android:id="@+id/setButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/haguruma"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_above="@id/titleLinerLayout">-->
+
+        <!--&lt;!&ndash; 結果保存&ndash;&gt;-->
+        <!--<ImageButton-->
+            <!--android:id="@+id/stockButton"-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:layout_gravity="left"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:src="@drawable/stock"/>-->
+
+        <!--&lt;!&ndash; 設定&ndash;&gt;-->
+        <!--<ImageButton-->
+            <!--android:id="@+id/setButton"-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:layout_gravity="right"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:src="@drawable/haguruma"/>-->
+
+    <!--</LinearLayout>-->
 
     <!-- 「黒点」Linerレイアウト-->
     <LinearLayout
