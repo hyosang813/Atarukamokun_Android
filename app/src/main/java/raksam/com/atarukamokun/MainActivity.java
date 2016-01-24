@@ -13,8 +13,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.ImageView;
-import android.util.Log;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -175,9 +173,13 @@ public class MainActivity extends Activity {
         //animeSwitchがtrue(アニメーション中)は以降の処理を全スキップ
         if (animeSwitch) return;
 
+        //設定ボタン
+        ImageButton setButton = (ImageButton)findViewById(R.id.setButton);
+
         //ボタンが何回目に押されているかによって処理のディスパッチ
         switch (buttonCount) {
             case 0: //表示窓枠を描画し左右&高速アニメーション　※設定ボタンは選択不可能状態に非活性化 NENDはインスタンス破棄して非表示
+
                 /***
                  *NENDの破棄と非表示を行う！！！！！！！
                  */
@@ -188,12 +190,8 @@ public class MainActivity extends Activity {
                 blinkSwitch = true; //点滅状態を作り出すためのスイッチ
                 animeSwitch = true; //左右アニメーション中はボタン押しても反応しないよー
 
-                /***
-                 *設定ボタン系を非選択にする！！！！！！
-                 * setButton.enabled = false みたいな
-                 * setButton.enabled = false みたいな
-                 */
-
+                //設定ボタンを非アクティブ
+                setButton.setEnabled(false);
 
                 drawLabelFrame(); //結果表示ラベル自体を表示
                 firstPress(buttonID); //１回目のボタン押下では左右アニメーション開始
@@ -207,10 +205,13 @@ public class MainActivity extends Activity {
                 break;
             case 2: //ボタンカウント2の時はラベルの点滅終了　※選択不可状態の設定ボタンを活性化　NENDは表示
                 /***
-                 *NENDの表示と設定系ボタンの活性化
+                 *NENDの表示
                  */
 
                 blinkStop();
+
+                //設定ボタンをアクティブ
+                setButton.setEnabled(true);
                 break;
         }
     }
@@ -347,11 +348,7 @@ public class MainActivity extends Activity {
         //buttonCount初期化
         buttonCount = 0;
 
-
-        /***
-         *結果保存用の処理がここに入る
-         */
-
+        //結果保存はいらないや
     }
 
     // 左右アニメーションタイマータスク用のインナークラス　※MainActivity内に定義されているよ！！！

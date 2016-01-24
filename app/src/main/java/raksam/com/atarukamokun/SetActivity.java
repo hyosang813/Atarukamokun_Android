@@ -1,13 +1,13 @@
 package raksam.com.atarukamokun;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.RadioGroup;
 
-import android.util.Log;
 
 public class SetActivity extends Activity {
 
@@ -126,9 +126,33 @@ public class SetActivity extends Activity {
                 //各ピッカービューの選択値を共通クラスに格納
                 for (int i = 0; i < pickerContentArray.length; i++) {
                     for (int j = 0; j < pickerContentArray[i].length; j++) {
-                        NumberPicker numberPicker = (NumberPicker)findViewById(pickerContentArray[i][j]);
+                        NumberPicker numberPicker = (NumberPicker) findViewById(pickerContentArray[i][j]);
                         common.pickerContents[i][j] = numberPicker.getValue();
                     }
+                }
+
+                //ナンバーズで全て選択されてる場合と、ロトで重複がある場合はアラート表示してメイン画面への遷移を阻止する
+                if (allTapCheck(common.pickerContents[0])) {
+                    showAlert("ナン3全選択", "ナンバーズは全て選択するとランダム表示ができません");
+                    return;
+                }
+                if (allTapCheck(common.pickerContents[1])) {
+                    showAlert("ナン4全選択", "ナンバーズは全て選択するとランダム表示ができません");
+                    return;
+                }
+
+                //ロト系は重複数字があればアラート表示してメイン画面への遷移を阻止する
+                if (overlapCheck(common.pickerContents[2])) {
+                    showAlert("ミニロト重複", "ミニロトで数字が重複選択されています");
+                    return;
+                }
+                if (overlapCheck(common.pickerContents[3])) {
+                    showAlert("ロト6重複", "ロト6で数字が重複選択されています");
+                    return;
+                }
+                if (overlapCheck(common.pickerContents[4])) {
+                    showAlert("ロト7重複", "ロト7で数字が重複選択されています");
+                    return;
                 }
 
                 //メイン画面に戻る
@@ -162,8 +186,36 @@ public class SetActivity extends Activity {
             default: return R.id.loto7Pick;
         }
     }
-//    @Override
-//    public void onWindowFocusChanged(boolean hasFocus) {
-//
-//    }
+
+    //アラートメソッド
+    private void showAlert(String title, String message) {
+        new AlertDialog.Builder(SetActivity.this)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("OK", null)
+                .show();
+    }
+
+    //ナンバーズ系全選択チェックメソッド
+    private boolean allTapCheck(int[] checkArray) {
+        for (int i = 0; i < checkArray.length; i++)
+            if (checkArray[i] == 0) return false;
+        return true;
+    }
+
+    //ロト系重複チェックメソッド
+    private boolean overlapCheck(int[] checkArray) {
+        for (int i = 0; i < checkArray.length; i++) {
+            //「0」は除外
+            if (checkArray[i] == 0) continue;
+            for (int j = 0; j < checkArray.length; j++) {
+                //自分と同じ数字は除外
+                if (i == j) continue;
+                //重複があればメッセージ
+                if (checkArray[i] == checkArray[j]) return true;
+            }
+        }
+        return false;
+    }
+
 }
