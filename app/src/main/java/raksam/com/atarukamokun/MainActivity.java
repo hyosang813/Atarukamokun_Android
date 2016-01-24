@@ -61,8 +61,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // グローバル変数を扱うクラスを取得する
-        common = (Common) getApplication();
+        //commonインスタンスがなければ作る(シングルトン)
+        if (common == null) {
+            // グローバル変数を扱うクラスを取得する
+            common = (Common) getApplication();
+        }
 
         //commonのWindowSizeがnullだったら画面サイズ取得
         if (common.windowSize == null) {
@@ -246,15 +249,19 @@ public class MainActivity extends Activity {
             case R.id.num3Button:
             case R.id.num4Button:
 
-                /***
-                 * 設定画面からの数字あるかないかで処理を入れる！！！！！！！！！！！！！！！！！！
-                 * 「setArrayParent」とか
-                */
-
                 //endArrayに入れ直してナンバーズ3なら最後の要素を削除 ※単純な代入だと参照渡し(シャローコピー)になっちまうからaddAllで値渡し(ディープコピー)する
                 endArray.addAll(startArray);
+                int bKind = 1;
                 if (buttonKind == R.id.num3Button) {
                     endArray.remove(endArray.size() - 1);
+                    bKind = 0;
+                }
+
+                //設定画面の情報に置き換え
+                for (int i = 0; i < endArray.size(); i++ ) {
+                    if (common.pickerContents[bKind][i] != 0) {
+                        endArray.set(i, String.valueOf(common.pickerContents[bKind][i] - 1));
+                    }
                 }
 
                 blinkTm = new Timer(); //点滅表示タイマーインスタンス生成
@@ -269,31 +276,42 @@ public class MainActivity extends Activity {
                 //範囲指定変数
                 int range;
                 int kind;
+                int blKind;
 
                 //くじ別範囲設定
                 switch (buttonKind) {
                     case R.id.miniLotoButton:
                         range = 31;
                         kind = 5;
+                        blKind = 2;
                         break;
                     case R.id.loto6Button:
                         range = 43;
                         kind = 6;
+                        blKind = 3;
                         break;
                     default:
                         range = 37;
                         kind = 7;
+                        blKind = 4;
                         break;
                 }
 
-                /***
-                 * 設定画面からの数字あるかないかで処理を入れる！！！！！！！！！！！！！！！！！！
-                 * 「setArrayParent」とか
-                 */
+                //まずは重複がない前提の設定画面で選択された値をendArrayに格納
+                for (int i = 0; i < common.pickerContents[blKind].length; i++) {
+                    if (common.pickerContents[blKind][i] != 0) {
+                        endArray.add(String.format("%02d", common.pickerContents[blKind][i]));
+                    }
+                }
 
-                //本当はここで設定画面の選択情報を加味するけどとりあえず動くように作る
-                for (int i = 0; i < kind; i++) {
-                    endArray.add(String.format("%02d", new Random().nextInt(range) + 1));
+                //重複を排除しつつ乱数生成
+                for (int i = endArray.size(); i < kind; i++) {
+                    String addStr = String.format("%02d", new Random().nextInt(range) + 1);
+                    if (endArray.contains(addStr)) {
+                        i--;
+                        continue;
+                    }
+                    endArray.add(addStr);
                 }
 
                 //ソート

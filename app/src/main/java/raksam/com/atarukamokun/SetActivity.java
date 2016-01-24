@@ -49,8 +49,11 @@ public class SetActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set);
 
-        //共通クラス取得
-        common = (Common) getApplication();
+        //commonインスタンスがなければ作る(シングルトン)
+        if (common == null) {
+            //共通クラス取得
+            common = (Common) getApplication();
+        }
 
         //各ピッカーの数列生成と表示
         for (int i = 0; i < pickerContentArray.length; i++) {
@@ -109,7 +112,6 @@ public class SetActivity extends Activity {
                         picker.setVisibility(View.GONE);
                     }
                 }
-
                 //共通クラスにチェックされてるIDを格納
                 common.segChecked = checkedId;
             }
