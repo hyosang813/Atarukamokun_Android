@@ -115,14 +115,20 @@ public class MainActivity extends Activity {
         resultView.setHeight(common.windowSize.y / 7);
 
         //画面サイズに応じて「あ」「た」「る」「かも」「クン」のサイズ指定
-        int ataruList[] = {R.id.viewA, R.id.viewTA, R.id.viewRU, R.id.viewKAMO, R.id.viewKUN};
+        int ataruList[] = {R.id.viewA, R.id.viewTA, R.id.viewRU, R.id.viewKAMO, R.id.viewKU,R.id.viewN };
         for(int i = 0; i < ataruList.length; i++) {
             TextView ataruView = (TextView)findViewById(ataruList[i]);
-            ataruView.setWidth(common.windowSize.x / 10);
-            ataruView.setHeight(common.windowSize.y / 6);
             if (i < 3) {
-                ataruView.setTextSize(common.windowSize.x / 40);
+                ataruView.setWidth(common.windowSize.x / 8);
+                ataruView.setHeight(common.windowSize.y / 5);
+                ataruView.setTextSize(common.windowSize.x / 30);
+            } else if (i == 3){
+                ataruView.setWidth(common.windowSize.x / 35);
+                ataruView.setHeight(common.windowSize.y / 60);
+                ataruView.setTextSize(common.windowSize.x / 350);
             } else {
+                ataruView.setWidth(common.windowSize.x / 15);
+                ataruView.setHeight(common.windowSize.y / 12);
                 ataruView.setTextSize(common.windowSize.x / 80);
             }
         }

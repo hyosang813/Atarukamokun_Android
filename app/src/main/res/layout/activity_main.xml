@@ -66,9 +66,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        android:layout_above="@id/resultView">
-
+        android:layout_above="@id/resultView"
+        android:gravity="center_horizontal">
 
         <!-- 「あ」　-->
         <TextView
@@ -76,7 +75,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:background="@color/colorAccent"
+            android:textColor="#FF0000"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="1"
+            android:rotation="350"
             android:text="あ"/>
 
         <!-- 「た」　-->
@@ -85,7 +89,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:background="@color/colorPrimary"
+            android:textColor="#FFA500"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="1"
+            android:rotation="10"
             android:text="た"/>
 
         <!-- 「る」　-->
@@ -94,7 +103,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:background="@color/colorPrimaryDark"
+            android:textColor="#FFC0CB"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="1"
+            android:rotation="350"
             android:text="る"/>
 
         <!-- 「かも」　-->
@@ -102,29 +116,57 @@
             android:id="@+id/viewKAMO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="@color/colorAccent"
-            android:text="かも"/>
+            android:gravity="left"
+            android:textColor="#FF0000"
+            android:text="かも" />
 
-        <!-- 「クン」　-->
-        <TextView
-            android:id="@+id/viewKUN"
+         「クン」　
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="@color/colorPrimary"
-            android:text="クン"/>
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
+
+        <!-- 「ク」　-->
+        <TextView
+            android:id="@+id/viewKU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#006400"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="1"
+            android:text="ク"/>
+
+        <!-- 「ン」　-->
+        <TextView
+            android:id="@+id/viewN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textColor="#800080"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="1"
+            android:text="ン"/>
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
-        <!-- 設定ボタン -->
-        <ImageButton
-            android:id="@+id/setButton"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/haguruma"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"/>
+    <!-- 設定ボタン -->
+    <ImageButton
+        android:id="@+id/setButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/haguruma"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"/>
 
 
     <!-- 「黒点」Linerレイアウト-->
