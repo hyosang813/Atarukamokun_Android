@@ -11,8 +11,12 @@ import android.os.Bundle;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import net.nend.android.NendAdView;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -48,6 +52,8 @@ public class MainActivity extends Activity {
     private ArrayList<String> endArray = new ArrayList<>(); //最終表示用の配列
     private boolean blinkSwitch = true; //点滅状態を作り出すためのスイッチ
     private int orderCount = 0; //ロト系順次表示アニメーション用のカウンタ変数
+
+    private NendAdView adView; //NEND
 
 
 
@@ -180,12 +186,13 @@ public class MainActivity extends Activity {
         switch (buttonCount) {
             case 0: //表示窓枠を描画し左右&高速アニメーション　※設定ボタンは選択不可能状態に非活性化 NENDはインスタンス破棄して非表示
 
-                /***
-                 *NENDの破棄と非表示を行う！！！！！！！
-                 */
+                //NENDの破棄と非表示
+                if (adView != null) {
+                    adView.setVisibility(View.INVISIBLE);
+                    adView = null;
+                }
 
                 //別スレッドでタイマー回しまくってるからタイミングがずれるっぽいのでここで色々初期化
-
                 revolCount = 0; //revolCountの初期化
                 blinkSwitch = true; //点滅状態を作り出すためのスイッチ
                 animeSwitch = true; //左右アニメーション中はボタン押しても反応しないよー
@@ -197,17 +204,37 @@ public class MainActivity extends Activity {
                 firstPress(buttonID); //１回目のボタン押下では左右アニメーション開始
                 break;
             case 1: //ボタンカウント1の時はラベルを点滅表示　NENDは生成して非表示状態で待機
-                /***
-                 *NENDの準備
-                 */
 
-                secondPress(); //２回目のボタン押下で各数字を確定させて点滅表示
+                //MainActivity.xmlのレイアウト情報取得
+                RelativeLayout mainLayout = (RelativeLayout)findViewById(R.id.mainLayout);
+
+                //Nendをインスタンス化
+//                adView = new NendAdView(this, 521290, "6c497127fddea3a9b0cf2c14c5f42bf9032b5bd8"); //本番
+                adView = new NendAdView(this, 3174, "c5cb8bc474345961c6e7a9778c947957ed8e1e4f"); //テスト
+
+                //広告はまだ非表示
+                adView.setVisibility(View.INVISIBLE);
+
+                //レイアウト情報を作成
+                RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                param.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 1); //垂直位置をBOTTOMに
+                param.addRule(RelativeLayout.CENTER_HORIZONTAL, 2); // 水平位置をCENTERに
+
+                //AdViewをMainActivity.xmlのレイアウトに追加
+                mainLayout.addView(adView, param);
+
+                //広告の取得を開始
+                adView.loadAd();
+
+                //２回目のボタン押下で各数字を確定させて点滅表示
+                secondPress();
                 break;
             case 2: //ボタンカウント2の時はラベルの点滅終了　※選択不可状態の設定ボタンを活性化　NENDは表示
-                /***
-                 *NENDの表示
-                 */
 
+                //NENDの表示
+                adView.setVisibility(View.VISIBLE);
+
+                //点滅終了
                 blinkStop();
 
                 //設定ボタンをアクティブ
