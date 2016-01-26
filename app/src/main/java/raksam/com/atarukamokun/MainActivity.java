@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+//import android.graphics.Rect;
+//import android.widget.ImageView;
 
 import net.nend.android.NendAdView;
 
@@ -166,6 +168,9 @@ public class MainActivity extends Activity {
     //起動時は表示されていない枠を表示
     private void drawLabelFrame() {
 
+        //MainActivity.xmlのレイアウト情報取得
+        RelativeLayout mainLayout = (RelativeLayout)findViewById(R.id.mainLayout);
+
         for (int labelID: resultLabelList) {
             TextView resultLabel = (TextView)findViewById(labelID);
             //縁取り
@@ -173,9 +178,22 @@ public class MainActivity extends Activity {
             gd.setStroke(2, Color.BLACK);
             resultLabel.setBackground(gd);
 
-            /***
-             * 以降で下部中央をあける処理と重なる部分が2ptの線幅になる問題の処理が必要！！！！！！！！！！！
-             */
+            //以下の処理はdpを理解した後にアップデートで考えよう
+//            //labelのグローバル座標を取得
+//            Rect rect = new Rect();
+//            resultLabel.getGlobalVisibleRect(rect);
+//
+//            // 画像の設定
+//            ImageView imageView = new ImageView(this);
+//            imageView.setImageResource(R.drawable.basepiece);
+//
+//            //縁取りの下を背景画像で埋める マジックナンバーだからいけてないなあああああああああああああああああああああああアアアアアア
+//            imageView.setX(rect.left - this.getResources().getDimension(R.dimen.activity_vertical_margin) + ((rect.width() / 2) - 14));
+//            imageView.setY(rect.bottom - (this.getResources().getDimension(R.dimen.activity_horizontal_margin) + 18));
+//
+//            //メインアクティビティに追加
+//            mainLayout.addView(imageView);
+
         }
     }
 
@@ -206,7 +224,12 @@ public class MainActivity extends Activity {
                 //設定ボタンを非アクティブ
                 setButton.setEnabled(false);
 
-                drawLabelFrame(); //結果表示ラベル自体を表示
+                //枠線表示は初回のみ
+                if (!common.firstBootFlg) {
+                    drawLabelFrame(); //結果表示ラベル自体を表示
+                    common.firstBootFlg = true;
+                }
+
                 firstPress(buttonID); //１回目のボタン押下では左右アニメーション開始
                 break;
             case 1: //ボタンカウント1の時はラベルを点滅表示　NENDは生成して非表示状態で待機
