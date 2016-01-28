@@ -18,7 +18,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
-        android:text="Reset"/>
+        android:text="@string/reset"/>
 
 
     <Button
@@ -29,7 +29,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
-        android:text="戻る"/>
+        android:text="@string/return_main"/>
 
 
     <!-- ナンバーズ３用のビッカー-->
@@ -207,7 +207,7 @@
             android:background="@drawable/segmented_left"
             android:button="@null"
             android:gravity="center"
-            android:text="ナン3"
+            android:text="@string/seg_num3"
             android:textColor="@drawable/segmented_text_color" />
 
         <RadioButton
@@ -217,7 +217,7 @@
             android:background="@drawable/segmented_center"
             android:button="@null"
             android:gravity="center"
-            android:text="ナン4"
+            android:text="@string/seg_num4"
             android:textColor="@drawable/segmented_text_color" />
 
         <RadioButton
@@ -227,7 +227,7 @@
             android:background="@drawable/segmented_center"
             android:button="@null"
             android:gravity="center"
-            android:text="ミニロト"
+            android:text="@string/seg_mini"
             android:textColor="@drawable/segmented_text_color" />
 
         <RadioButton
@@ -237,7 +237,7 @@
             android:background="@drawable/segmented_center"
             android:button="@null"
             android:gravity="center"
-            android:text="ロト6"
+            android:text="@string/seg_loto6"
             android:textColor="@drawable/segmented_text_color" />
 
         <RadioButton
@@ -247,11 +247,8 @@
             android:background="@drawable/segmented_right"
             android:button="@null"
             android:gravity="center"
-            android:text="ロト7"
+            android:text="@string/seg_loto7"
             android:textColor="@drawable/segmented_text_color" />
     </RadioGroup>
-
-
-
 
 </RelativeLayout>

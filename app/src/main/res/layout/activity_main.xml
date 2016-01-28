@@ -82,7 +82,7 @@
             android:shadowRadius="1"
             android:rotation="350"
             android:textStyle="bold"
-            android:text="あ"/>
+            android:text="@string/title_a"/>
 
         <!-- 「た」　-->
         <TextView
@@ -97,7 +97,7 @@
             android:shadowRadius="1"
             android:rotation="10"
             android:textStyle="bold"
-            android:text="た"/>
+            android:text="@string/title_ta"/>
 
         <!-- 「る」　-->
         <TextView
@@ -112,16 +112,16 @@
             android:shadowRadius="1"
             android:rotation="350"
             android:textStyle="bold"
-            android:text="る"/>
+            android:text="@string/title_ru"/>
 
         <!-- 「かも」　-->
         <TextView
             android:id="@+id/viewKAMO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="left"
+            android:gravity="start"
             android:textColor="#FF0000"
-            android:text="かも" />
+            android:text="@string/title_kamo" />
 
          <!--「クン」　-->
         <LinearLayout
@@ -135,28 +135,28 @@
             android:id="@+id/viewKU"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="left"
+            android:gravity="start"
             android:textColor="#006400"
             android:shadowColor="#FFFFFF"
             android:shadowDx="5"
             android:shadowDy="5"
             android:shadowRadius="1"
             android:textStyle="bold"
-            android:text="ク"/>
+            android:text="@string/title_ku"/>
 
         <!-- 「ン」　-->
         <TextView
             android:id="@+id/viewN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="end"
             android:textColor="#800080"
             android:shadowColor="#FFFFFF"
             android:shadowDx="5"
             android:shadowDy="5"
             android:shadowRadius="1"
             android:textStyle="bold"
-            android:text="ン"/>
+            android:text="@string/title_n"/>
 
         </LinearLayout>
 
@@ -172,7 +172,8 @@
         android:src="@drawable/buttonselector"
         android:background="@drawable/haguruma"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:contentDescription="@string/desc"/>
 
 
     <!-- 「黒点」Linerレイアウト-->
@@ -192,7 +193,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_weight="1"
-            android:text="・"/>
+            android:text="@string/bp"/>
 
         <!-- BP2　-->
         <TextView
@@ -201,7 +202,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_weight="1"
-            android:text="・"/>
+            android:text="@string/bp"/>
 
         <!-- BP3　-->
         <TextView
@@ -210,7 +211,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_weight="1"
-            android:text="・"/>
+            android:text="@string/bp"/>
 
         <!-- BP4　-->
         <TextView
@@ -219,7 +220,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_weight="1"
-            android:text="・"/>
+            android:text="@string/bp"/>
 
         <!-- BP5　-->
         <TextView
@@ -228,7 +229,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_weight="1"
-            android:text="・"/>
+            android:text="@string/bp"/>
 
     </LinearLayout>
 
@@ -251,7 +252,8 @@
             android:scaleX="0.9"
             android:scaleY="0.8"
             android:background="@drawable/numbers3"
-            android:src="@drawable/buttonselector"/>
+            android:src="@drawable/buttonselector"
+            android:contentDescription="@string/desc"/>
 
         <!-- NUM4-->
         <ImageButton
@@ -264,7 +266,8 @@
             android:scaleX="0.9"
             android:scaleY="0.8"
             android:background="@drawable/numbers4"
-            android:src="@drawable/buttonselector"/>
+            android:src="@drawable/buttonselector"
+            android:contentDescription="@string/desc"/>
 
         <!-- MINILOTO-->
         <ImageButton
@@ -277,7 +280,8 @@
             android:scaleX="0.9"
             android:scaleY="0.8"
             android:background="@drawable/miniloto"
-            android:src="@drawable/buttonselector"/>
+            android:src="@drawable/buttonselector"
+            android:contentDescription="@string/desc"/>
 
         <!-- LOTO6-->
         <ImageButton
@@ -290,7 +294,8 @@
             android:scaleX="0.9"
             android:scaleY="0.8"
             android:background="@drawable/loto6"
-            android:src="@drawable/buttonselector"/>
+            android:src="@drawable/buttonselector"
+            android:contentDescription="@string/desc"/>
 
         <!-- LOTO7-->
         <ImageButton
@@ -303,7 +308,8 @@
             android:scaleX="0.9"
             android:scaleY="0.8"
             android:background="@drawable/loto7"
-            android:src="@drawable/buttonselector"/>
+            android:src="@drawable/buttonselector"
+            android:contentDescription="@string/desc"/>
 
     </LinearLayout>
 

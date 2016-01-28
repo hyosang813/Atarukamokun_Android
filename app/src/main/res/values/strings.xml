@@ -1,3 +1,22 @@
 <resources>
+    <!-- メイン画面-->
     <string name="app_name">AtaruKamoKun</string>
+    <string name="desc">表示失敗</string><!-- ImageButtonが表示できなかった時の文言 -->
+    <string name="title_a">あ</string>
+    <string name="title_ta">た</string>
+    <string name="title_ru">る</string>
+    <string name="title_kamo">かも</string>
+    <string name="title_ku">ク</string>
+    <string name="title_n">ン</string>
+    <string name="bp">・</string>
+
+    <!-- 設定画面-->
+    <string name="reset">Reset</string>
+    <string name="return_main">戻る</string>
+    <string name="seg_num3">ナン3</string>
+    <string name="seg_num4">ナン4</string>
+    <string name="seg_mini">ミニロト</string>
+    <string name="seg_loto6">ロト6</string>
+    <string name="seg_loto7">ロト7</string>
+
 </resources>
