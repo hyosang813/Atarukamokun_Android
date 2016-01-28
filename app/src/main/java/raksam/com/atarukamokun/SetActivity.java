@@ -2,11 +2,15 @@ package raksam.com.atarukamokun;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.RadioGroup;
+import java.lang.reflect.Field;
 
 
 public class SetActivity extends Activity {
@@ -86,6 +90,7 @@ public class SetActivity extends Activity {
                 numberPicker.setFocusable(true);
                 numberPicker.setFocusableInTouchMode(true);
                 numberPicker.setValue(common.pickerContents[i][j]);
+                setNumberPickerTextColor(numberPicker);
             }
         }
 
@@ -216,6 +221,23 @@ public class SetActivity extends Activity {
             }
         }
         return false;
+    }
+
+    //ナンバーピッカーの色を変更するメソッド
+    private static void setNumberPickerTextColor(NumberPicker numberPicker) {
+        final int count = numberPicker.getChildCount();
+        for(int i = 0; i < count; i++){
+            View child = numberPicker.getChildAt(i);
+            if(child instanceof EditText){
+                try{
+                    Field selectorWheelPaintField = numberPicker.getClass().getDeclaredField("mSelectorWheelPaint");
+                    selectorWheelPaintField.setAccessible(true);
+                    ((Paint)selectorWheelPaintField.get(numberPicker)).setColor(Color.parseColor("#407ee6"));
+                    ((EditText)child).setTextColor(Color.parseColor("#407ee6"));
+                    numberPicker.invalidate();
+                } catch(Exception e) {/* 本当はここにcatchした例外処理が必要 */}
+            }
+        }
     }
 
 }
