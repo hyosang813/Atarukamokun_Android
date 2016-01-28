@@ -169,7 +169,8 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/haguruma"
+        android:src="@drawable/buttonselector"
+        android:background="@drawable/haguruma"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"/>
 
@@ -247,7 +248,10 @@
             android:layout_gravity="center_horizontal"
             android:scaleType="fitCenter"
             android:layout_weight="1"
-            android:src="@drawable/numbers3"/>
+            android:scaleX="0.9"
+            android:scaleY="0.8"
+            android:background="@drawable/numbers3"
+            android:src="@drawable/buttonselector"/>
 
         <!-- NUM4-->
         <ImageButton
@@ -257,7 +261,10 @@
             android:layout_gravity="center_horizontal"
             android:scaleType="fitCenter"
             android:layout_weight="1"
-            android:src="@drawable/numbers4"/>
+            android:scaleX="0.9"
+            android:scaleY="0.8"
+            android:background="@drawable/numbers4"
+            android:src="@drawable/buttonselector"/>
 
         <!-- MINILOTO-->
         <ImageButton
@@ -267,7 +274,10 @@
             android:layout_gravity="center_horizontal"
             android:scaleType="fitCenter"
             android:layout_weight="1"
-            android:src="@drawable/miniloto"/>
+            android:scaleX="0.9"
+            android:scaleY="0.8"
+            android:background="@drawable/miniloto"
+            android:src="@drawable/buttonselector"/>
 
         <!-- LOTO6-->
         <ImageButton
@@ -277,7 +287,10 @@
             android:layout_gravity="center_horizontal"
             android:scaleType="fitCenter"
             android:layout_weight="1"
-            android:src="@drawable/loto6"/>
+            android:scaleX="0.9"
+            android:scaleY="0.8"
+            android:background="@drawable/loto6"
+            android:src="@drawable/buttonselector"/>
 
         <!-- LOTO7-->
         <ImageButton
@@ -287,7 +300,10 @@
             android:layout_gravity="center_horizontal"
             android:scaleType="fitCenter"
             android:layout_weight="1"
-            android:src="@drawable/loto7"/>
+            android:scaleX="0.9"
+            android:scaleY="0.8"
+            android:background="@drawable/loto7"
+            android:src="@drawable/buttonselector"/>
 
     </LinearLayout>
 

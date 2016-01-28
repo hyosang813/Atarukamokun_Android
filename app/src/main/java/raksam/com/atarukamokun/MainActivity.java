@@ -221,8 +221,8 @@ public class MainActivity extends Activity {
                 blinkSwitch = true; //点滅状態を作り出すためのスイッチ
                 animeSwitch = true; //左右アニメーション中はボタン押しても反応しないよー
 
-                //設定ボタンを非アクティブ
-                setButton.setEnabled(false);
+                //設定ボタンを非表示
+                setButton.setVisibility(View.GONE);
 
                 //枠線表示は初回のみ
                 if (!common.firstBootFlg) {
@@ -266,8 +266,8 @@ public class MainActivity extends Activity {
                 //点滅終了
                 blinkStop();
 
-                //設定ボタンをアクティブ
-                setButton.setEnabled(true);
+                //設定ボタンを表示
+                setButton.setVisibility(View.VISIBLE);
                 break;
         }
     }
