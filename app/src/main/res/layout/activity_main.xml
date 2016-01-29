@@ -19,8 +19,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_rounded_corners_5dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_centerInParent="true" />
+
 
     <!-- 結果表示ラベル(7個)-->
     <LinearLayout
@@ -32,31 +33,38 @@
 
         <TextView android:id="@+id/resultLabel1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="40sp"/>
 
         <TextView android:id="@+id/resultLabel2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="40sp"/>
 
         <TextView android:id="@+id/resultLabel3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="40sp"/>
 
         <TextView android:id="@+id/resultLabel4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="40sp"/>
 
         <TextView android:id="@+id/resultLabel5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="40sp"/>
 
         <TextView android:id="@+id/resultLabel6"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="40sp"/>
 
         <TextView android:id="@+id/resultLabel7"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="40sp"/>
 
     </LinearLayout>
 
@@ -82,7 +90,8 @@
             android:shadowRadius="1"
             android:rotation="350"
             android:textStyle="bold"
-            android:text="@string/title_a"/>
+            android:text="@string/title_a"
+            android:textSize="60sp"/>
 
         <!-- 「た」　-->
         <TextView
@@ -97,7 +106,8 @@
             android:shadowRadius="1"
             android:rotation="10"
             android:textStyle="bold"
-            android:text="@string/title_ta"/>
+            android:text="@string/title_ta"
+            android:textSize="60sp"/>
 
         <!-- 「る」　-->
         <TextView
@@ -112,7 +122,8 @@
             android:shadowRadius="1"
             android:rotation="350"
             android:textStyle="bold"
-            android:text="@string/title_ru"/>
+            android:text="@string/title_ru"
+            android:textSize="60sp"/>
 
         <!-- 「かも」　-->
         <TextView
@@ -121,7 +132,8 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:textColor="#FF0000"
-            android:text="@string/title_kamo" />
+            android:text="@string/title_kamo"
+            android:textSize="5sp"/>
 
          <!--「クン」　-->
         <LinearLayout
@@ -142,7 +154,8 @@
             android:shadowDy="5"
             android:shadowRadius="1"
             android:textStyle="bold"
-            android:text="@string/title_ku"/>
+            android:text="@string/title_ku"
+            android:textSize="25sp"/>
 
         <!-- 「ン」　-->
         <TextView
@@ -156,7 +169,8 @@
             android:shadowDy="5"
             android:shadowRadius="1"
             android:textStyle="bold"
-            android:text="@string/title_n"/>
+            android:text="@string/title_n"
+            android:textSize="25sp"/>
 
         </LinearLayout>
 
@@ -181,7 +195,6 @@
         android:id="@+id/blackPointLinerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_below="@id/resultView">
@@ -191,8 +204,9 @@
             android:id="@+id/BP1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:layout_weight="1"
+            android:textSize="30sp"
             android:text="@string/bp"/>
 
         <!-- BP2　-->
@@ -200,8 +214,9 @@
             android:id="@+id/BP2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:layout_weight="1"
+            android:textSize="30sp"
             android:text="@string/bp"/>
 
         <!-- BP3　-->
@@ -209,8 +224,9 @@
             android:id="@+id/BP3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:layout_weight="1"
+            android:textSize="30sp"
             android:text="@string/bp"/>
 
         <!-- BP4　-->
@@ -218,8 +234,9 @@
             android:id="@+id/BP4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:layout_weight="1"
+            android:textSize="30sp"
             android:text="@string/bp"/>
 
         <!-- BP5　-->
@@ -227,16 +244,18 @@
             android:id="@+id/BP5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:layout_weight="1"
+            android:textSize="30sp"
             android:text="@string/bp"/>
 
     </LinearLayout>
 
     <!-- 「ボタン」Linerレイアウト-->
     <LinearLayout
+        android:id="@+id/buttonLinerLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_below="@id/blackPointLinerLayout">
@@ -245,12 +264,12 @@
         <ImageButton
             android:id="@+id/num3Button"
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:scaleType="fitCenter"
             android:layout_weight="1"
-            android:scaleX="0.9"
-            android:scaleY="0.8"
+            android:scaleX="0.7"
+            android:scaleY="0.6"
             android:background="@drawable/numbers3"
             android:src="@drawable/buttonselector"
             android:contentDescription="@string/desc"/>
@@ -259,12 +278,12 @@
         <ImageButton
             android:id="@+id/num4Button"
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:scaleType="fitCenter"
             android:layout_weight="1"
-            android:scaleX="0.9"
-            android:scaleY="0.8"
+            android:scaleX="0.7"
+            android:scaleY="0.6"
             android:background="@drawable/numbers4"
             android:src="@drawable/buttonselector"
             android:contentDescription="@string/desc"/>
@@ -273,12 +292,12 @@
         <ImageButton
             android:id="@+id/miniLotoButton"
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:scaleType="fitCenter"
             android:layout_weight="1"
-            android:scaleX="0.9"
-            android:scaleY="0.8"
+            android:scaleX="0.7"
+            android:scaleY="0.6"
             android:background="@drawable/miniloto"
             android:src="@drawable/buttonselector"
             android:contentDescription="@string/desc"/>
@@ -287,12 +306,12 @@
         <ImageButton
             android:id="@+id/loto6Button"
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:scaleType="fitCenter"
             android:layout_weight="1"
-            android:scaleX="0.9"
-            android:scaleY="0.8"
+            android:scaleX="0.7"
+            android:scaleY="0.6"
             android:background="@drawable/loto6"
             android:src="@drawable/buttonselector"
             android:contentDescription="@string/desc"/>
@@ -301,12 +320,12 @@
         <ImageButton
             android:id="@+id/loto7Button"
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:scaleType="fitCenter"
             android:layout_weight="1"
-            android:scaleX="0.9"
-            android:scaleY="0.8"
+            android:scaleX="0.7"
+            android:scaleY="0.6"
             android:background="@drawable/loto7"
             android:src="@drawable/buttonselector"
             android:contentDescription="@string/desc"/>

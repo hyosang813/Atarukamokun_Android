@@ -13,13 +13,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-//import android.graphics.Rect;
-//import android.widget.ImageView;
-
-import net.nend.android.NendAdView;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -27,6 +23,7 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
+import net.nend.android.NendAdView;
 
 public class MainActivity extends Activity {
 
@@ -54,10 +51,7 @@ public class MainActivity extends Activity {
     private ArrayList<String> endArray = new ArrayList<>(); //最終表示用の配列
     private boolean blinkSwitch = true; //点滅状態を作り出すためのスイッチ
     private int orderCount = 0; //ロト系順次表示アニメーション用のカウンタ変数
-
     private NendAdView adView; //NEND
-
-
 
     //インスタンス変数セクション
     //********************************************************************
@@ -123,15 +117,12 @@ public class MainActivity extends Activity {
             if (i < 3) {
                 ataruView.setWidth(common.windowSize.x / 8);
                 ataruView.setHeight(common.windowSize.y / 5);
-                ataruView.setTextSize(common.windowSize.x / 30);
             } else if (i == 3){
                 ataruView.setWidth(common.windowSize.x / 35);
                 ataruView.setHeight(common.windowSize.y / 60);
-                ataruView.setTextSize(common.windowSize.x / 350);
             } else {
                 ataruView.setWidth(common.windowSize.x / 15);
                 ataruView.setHeight(common.windowSize.y / 12);
-                ataruView.setTextSize(common.windowSize.x / 80);
             }
         }
 
@@ -141,7 +132,6 @@ public class MainActivity extends Activity {
             TextView ataruView = (TextView)findViewById(bpID);
             ataruView.setWidth(common.windowSize.x / 6);
             ataruView.setHeight(common.windowSize.y / 10);
-            ataruView.setTextSize(common.windowSize.x / 50);
             ataruView.setTextColor(Color.BLACK);
         }
 
@@ -149,8 +139,8 @@ public class MainActivity extends Activity {
         resultLabelList = new int[]{R.id.resultLabel1, R.id.resultLabel2, R.id.resultLabel3, R.id.resultLabel4, R.id.resultLabel5, R.id.resultLabel6, R.id.resultLabel7};
 
         //土台のresultViewの横幅と縦幅をゲット
-        int resultWidth = (((int) ((double) common.windowSize.x / 1.7) / 7)) - 4; //-4はあくまでNexsus5のエミュレーターで目視確認した値！！！！！！！！！！！
-        int resultHeight = (common.windowSize.y / 7) - 20; //-20はあくまでNexsus5のエミュレーターで目視確認した値！！！！！！！！！！！
+        int resultWidth = (((int) ((double) common.windowSize.x / 1.7) / 7)) - 4; //-4はあくまでNexus5のエミュレーターで目視確認した値！！！！！！！！！！！
+        int resultHeight = (common.windowSize.y / 7) - 14; //-20はあくまでNexus5のエミュレーターで目視確認した値！！！！！！！！！！！
 
         for (int labelID: resultLabelList) {
             TextView resultLabel = (TextView)findViewById(labelID);
@@ -158,11 +148,11 @@ public class MainActivity extends Activity {
             resultLabel.setHeight(resultHeight);
             resultLabel.setTextColor(Color.BLACK);
             resultLabel.setTypeface(Typeface.createFromAsset(getAssets(), "7barSPBd.otf")); //外部デジタルフォント指定
-            resultLabel.setTextSize(resultWidth / 4); //フォントサイズの調整
-            /***
-             *とりあえずnexsus5のエミュレータだとwidth/4がちょうど良いサイズになるけど他はどうだろうナーーーーーーーー
-             */
         }
+
+        //ボタンのLinerLayoutのheightを画面サイズの1/6に指定
+        LinearLayout buttonLin = (LinearLayout)findViewById(R.id.buttonLinerLayout);
+        buttonLin.getLayoutParams().height = common.windowSize.y / 6;
     }
 
     //起動時は表示されていない枠を表示
@@ -193,7 +183,6 @@ public class MainActivity extends Activity {
 //
 //            //メインアクティビティに追加
 //            mainLayout.addView(imageView);
-
         }
     }
 
@@ -371,16 +360,11 @@ public class MainActivity extends Activity {
                     endArray.add(addStr);
                 }
 
-                //ソート
-                Collections.sort(endArray);
-
-                //順次表示アニメーション中はまたボタン操作を無効にする
-                animeSwitch = true;
-
+                Collections.sort(endArray); //ソート
+                animeSwitch = true; //順次表示アニメーション中はまたボタン操作を無効にする
                 sequentialDisplayTm = new Timer(); //点滅表示タイマーインスタンス生成
                 sequentialDisplayLoto = new SequentialDisplayLoto(); //点滅表示タイマータスクインスタンスを作成
                 sequentialDisplayTm.schedule(sequentialDisplayLoto, 0, 100); //点滅表示タイマースケジュールを遅延なし(0)で100ミリ秒(0.5秒)間隔で実行
-
                 break;
         }
     }
@@ -757,5 +741,4 @@ public class MainActivity extends Activity {
         //交互に点滅させる
         blinkSwitch = !blinkSwitch;
     }
-
 }
