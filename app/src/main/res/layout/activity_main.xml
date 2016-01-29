@@ -34,37 +34,37 @@
         <TextView android:id="@+id/resultLabel1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="36sp"/>
 
         <TextView android:id="@+id/resultLabel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="36sp"/>
 
         <TextView android:id="@+id/resultLabel3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="36sp"/>
 
         <TextView android:id="@+id/resultLabel4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="36sp"/>
 
         <TextView android:id="@+id/resultLabel5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="36sp"/>
 
         <TextView android:id="@+id/resultLabel6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="36sp"/>
 
         <TextView android:id="@+id/resultLabel7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="36sp"/>
 
     </LinearLayout>
 
@@ -91,7 +91,7 @@
             android:rotation="350"
             android:textStyle="bold"
             android:text="@string/title_a"
-            android:textSize="60sp"/>
+            android:textSize="56sp"/>
 
         <!-- 「た」　-->
         <TextView
@@ -107,7 +107,7 @@
             android:rotation="10"
             android:textStyle="bold"
             android:text="@string/title_ta"
-            android:textSize="60sp"/>
+            android:textSize="56sp"/>
 
         <!-- 「る」　-->
         <TextView
@@ -123,7 +123,7 @@
             android:rotation="350"
             android:textStyle="bold"
             android:text="@string/title_ru"
-            android:textSize="60sp"/>
+            android:textSize="56sp"/>
 
         <!-- 「かも」　-->
         <TextView
@@ -204,7 +204,7 @@
             android:id="@+id/BP1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="center|bottom"
             android:layout_weight="1"
             android:textSize="30sp"
             android:text="@string/bp"/>
@@ -214,7 +214,7 @@
             android:id="@+id/BP2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="center|bottom"
             android:layout_weight="1"
             android:textSize="30sp"
             android:text="@string/bp"/>
@@ -224,7 +224,7 @@
             android:id="@+id/BP3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="center|bottom"
             android:layout_weight="1"
             android:textSize="30sp"
             android:text="@string/bp"/>
@@ -234,7 +234,7 @@
             android:id="@+id/BP4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="center|bottom"
             android:layout_weight="1"
             android:textSize="30sp"
             android:text="@string/bp"/>
@@ -244,7 +244,7 @@
             android:id="@+id/BP5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="center|bottom"
             android:layout_weight="1"
             android:textSize="30sp"
             android:text="@string/bp"/>
