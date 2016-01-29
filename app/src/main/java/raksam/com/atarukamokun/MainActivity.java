@@ -169,7 +169,7 @@ public class MainActivity extends Activity {
     private void drawLabelFrame() {
 
         //MainActivity.xmlのレイアウト情報取得
-        RelativeLayout mainLayout = (RelativeLayout)findViewById(R.id.mainLayout);
+//        RelativeLayout mainLayout = (RelativeLayout)findViewById(R.id.mainLayout);
 
         for (int labelID: resultLabelList) {
             TextView resultLabel = (TextView)findViewById(labelID);
