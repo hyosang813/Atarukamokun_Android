@@ -15,3 +15,7 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+#NEND用の難読化指定
+-keep class net.nend.android.** { *; }
+-dontwarn net.nend.android.**
