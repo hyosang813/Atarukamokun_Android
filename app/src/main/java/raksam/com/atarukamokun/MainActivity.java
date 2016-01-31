@@ -227,8 +227,8 @@ public class MainActivity extends Activity {
                 RelativeLayout mainLayout = (RelativeLayout)findViewById(R.id.mainLayout);
 
                 //Nendをインスタンス化
-//                adView = new NendAdView(this, 521290, "6c497127fddea3a9b0cf2c14c5f42bf9032b5bd8"); //本番
-                adView = new NendAdView(this, 3174, "c5cb8bc474345961c6e7a9778c947957ed8e1e4f"); //テスト
+                adView = new NendAdView(this, 521290, "6c497127fddea3a9b0cf2c14c5f42bf9032b5bd8"); //本番
+//                adView = new NendAdView(this, 3174, "c5cb8bc474345961c6e7a9778c947957ed8e1e4f"); //テスト
 
                 //広告はまだ非表示
                 adView.setVisibility(View.INVISIBLE);
