@@ -12,9 +12,10 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="landscape"> <!-- landscapeを設定して横方向に固定 -->
-            <intent-filter>
+            <intent-filter
+                android:label="当たる鴨君"
+                >
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
